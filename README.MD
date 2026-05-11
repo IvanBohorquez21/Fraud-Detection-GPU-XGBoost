@@ -35,5 +35,47 @@ El modelo fue optimizado priorizando el **Recall**, ya que en la detección de f
 - `models/`: Almacena el modelo entrenado y el escalador de datos para asegurar la consistencia en las predicciones.
 - `data/`: Registro de transacciones (basado en el dataset de Credit Card Fraud de Kaggle).
 
+## 📋 Requisitos Previos
+- **XAMPP** (con MySQL corriendo en el puerto 3306).
+- **Python** 3.10 o superior.
+- **NVIDIA Drivers & CUDA Toolkit** (si deseas usar la aceleración por GPU con tu RTX 4060).
+
+## 🛠️ Instalación y Configuración del Sistema
+Sigue estos pasos para replicar el entorno de desarrollo en tu máquina local:
+- Clonar y Preparar el Entorno
+```bash
+# Clonar el repositorio
+git clone https://github.com/IvanBohorquez21/Fraud-Detection-GPU-XGBoost.git
+cd Fraud-Detection-GPU-XGBoost
+
+# Crear el entorno virtual
+python -m venv env
+
+# Activar el entorno (Windows)
+.\env\Scripts\Activate.ps1
+
+```
+- Instalación de Dependencias
+Este proyecto requiere librerías específicas para el manejo de datos, modelos de IA y aceleración por hardware:
+
+```bash
+pip install -r requirements.txt
+
+```
+Las dependencias principales incluyen: xgboost, scikit-learn, pandas, mysql-connector-python, imblearn y matplotlib.
+
+## 🗄️ Configuración de la Base de Datos
+
+El sistema extrae la información directamente de un servidor local. Sigue estos pasos para replicar la estructura:
+
+- Abre phpMyAdmin desde el panel de XAMPP.
+- Crea una base de datos llamada deteccion_fraude.
+- Importa el archivo CSV que se encuentra en la carpeta /data o ejecuta el script de carga:
+
+```bash
+python scripts/cargar_datos.py
+
+```
+
 ---
 **Desarrollado por Ivan Fernando Bohorquez Hernandez** *Ingeniero de Electrónica*
